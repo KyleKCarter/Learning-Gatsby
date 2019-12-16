@@ -1,7 +1,16 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 
 const Footer = () => {
+  const data = useStaticQuery(graphql`
+  query {
+    site {
+      siteMetadata {
+        author
+      }
+    }
+  }
+  `)
   return (
     <footer
       style={{
@@ -14,7 +23,7 @@ const Footer = () => {
       <p>
         Need a flex player? <Link to="/contact">Contact me.</Link>
       </p>
-      <p>Created by Kyle Carter, © 2019</p>
+      <p>Created by {data.site.siteMetadata.author}, © 2019</p>
     </footer>
   )
 }
