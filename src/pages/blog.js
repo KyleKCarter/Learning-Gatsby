@@ -3,6 +3,8 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 
 import Layout from "../components/layout/layout"
 
+import blogStyles from './styles/blog.module.scss'
+
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -24,15 +26,8 @@ const BlogPage = () => {
 
   const mappedData = data.allMarkdownRemark.edges.map(post => {
     return (
-      <Link style={{
-        textDecoration: "none",
-        color: "#666666"
-      }} to={post.node.frontmatter.path}>
-        <div
-          style={{
-            marginBottom: "2%",
-          }}
-        >
+      <Link className={blogStyles.posts} to={post.node.frontmatter.path}>
+        <div className={blogStyles.post}>
           <h4>{post.node.frontmatter.title}</h4>
           <p>{post.node.frontmatter.date}</p>
           <hr />

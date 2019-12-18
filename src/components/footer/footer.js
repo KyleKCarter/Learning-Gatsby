@@ -1,6 +1,8 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
+import footerStyles from './footer.module.scss'
+
 const Footer = () => {
   const data = useStaticQuery(graphql`
   query {
@@ -19,6 +21,7 @@ const Footer = () => {
         justifyContent: "space-evenly",
         alignItems: "center",
       }}
+      className={footerStyles.footer}
     >
       <p>
         Need a flex player? <Link to="/contact">Contact me.</Link>

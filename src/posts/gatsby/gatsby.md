@@ -6,6 +6,8 @@ date: "2019-12-15"
 
 I just launched a new bootcamp!
 
+![Winterfell](./Winterfell-white-raven.jpg)
+
 ## Topics Covered
 
 1. Gatsby
